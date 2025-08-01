@@ -5,7 +5,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=l1nx09&label=Profile%20views&color=0e75b6&style=flat" alt="l1nx09" /> </p>
 
-- 🔭 I’m currently working on a game
+- 🔭 I’m currently working on a flutter app
 
 - 🌱 I’m currently learning **vim, linux**
 
