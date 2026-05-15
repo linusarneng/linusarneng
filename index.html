@@ -51,9 +51,10 @@
       filter: brightness(1.08);
     }
 
-    /* Typing animation */
+    /* Typing animation — centered via flex */
     .typing-wrap {
-      text-align: center;
+      display: flex;
+      justify-content: center;
       margin: 16px 0 8px;
     }
     .typing-text {
@@ -61,7 +62,6 @@
       font-weight: 700;
       color: #1f2328;
       white-space: nowrap;
-      display: inline-block;
       position: relative;
       animation: typing 1.8s steps(18, end) 0.3s both;
     }
@@ -83,22 +83,41 @@
       50% { opacity: 0; }
     }
 
-    /* Skill rows hover */
-    .markdown-body table tbody tr {
-      transition: background 0.15s;
-      cursor: default;
+    /* Skills list */
+    .skills-section h3 {
+      margin-bottom: 12px;
     }
-    .markdown-body table tbody tr:hover {
-      background: #ddf4ff;
+    .skill-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.9rem;
+      color: #1f2328;
     }
-
-    /* Details hover */
-    details {
-      transition: box-shadow 0.2s;
-      border-radius: 6px;
+    .skill-row:last-child {
+      border-bottom: none;
     }
-    details:hover {
-      box-shadow: 0 0 0 2px #0969da44;
+    .skill-icon {
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .skill-area {
+      font-weight: 600;
+      min-width: 80px;
+      color: #656d76;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .skill-techs {
+      color: #1f2328;
     }
 
     /* Email badge hover glow */
@@ -149,21 +168,29 @@
 
         <hr />
 
-        <details>
-          <summary><b>🧠 What I'm good at</b> (click to expand)</summary>
-          <br />
-          <table>
-            <thead>
-              <tr><th>Area</th><th>Technologies</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Frontend</strong></td><td>React, HTML/CSS, JavaScript</td></tr>
-              <tr><td><strong>Backend</strong></td><td>Python, Node.js</td></tr>
-              <tr><td><strong>Mobile</strong></td><td>Flutter, Android</td></tr>
-              <tr><td><strong>Other</strong></td><td>Git, Linux, C#, Unity</td></tr>
-            </tbody>
-          </table>
-        </details>
+        <div class="skills-section">
+          <h3>🧠 What I'm good at</h3>
+          <div class="skill-row">
+            <span class="skill-icon">⚛️</span>
+            <span class="skill-area">Frontend</span>
+            <span class="skill-techs">React, HTML/CSS, JavaScript</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-icon">🐍</span>
+            <span class="skill-area">Backend</span>
+            <span class="skill-techs">Python, Node.js</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-icon">📱</span>
+            <span class="skill-area">Mobile</span>
+            <span class="skill-techs">Flutter, Android</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-icon">🛠️</span>
+            <span class="skill-area">Other</span>
+            <span class="skill-techs">Git, Linux, C#, Unity</span>
+          </div>
+        </div>
 
         <hr />
 
