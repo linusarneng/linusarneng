@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="50">
+  <style>
+    .text {
+      font-family: monospace;
+      font-size: 20px;
+      fill: #58a6ff;
+    }
+    .cursor {
+      font-family: monospace;
+      font-size: 20px;
+      fill: #58a6ff;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .line1 { animation: reveal1 0s 0.5s both; }
+    .line2 { animation: reveal2 0s 2.5s both; }
+    .line3 { animation: reveal3 0s 4.5s both; }
+
+    @keyframes reveal1 { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes reveal2 { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes reveal3 { from { opacity: 0; } to { opacity: 1; } }
+
+    .type1 {
+      animation: type1 2s steps(28, end) 0.5s both;
+      clip-path: inset(0 100% 0 0);
+    }
+    .type2 {
+      animation: type2 2s steps(22, end) 2.5s both;
+      clip-path: inset(0 100% 0 0);
+    }
+    .type3 {
+      animation: type3 2s steps(20, end) 4.5s both;
+      clip-path: inset(0 100% 0 0);
+    }
+
+    @keyframes type1 { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0% 0 0); } }
+    @keyframes type2 { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0% 0 0); } }
+    @keyframes type3 { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0% 0 0); } }
+  </style>
+
+  <text x="10" y="22" class="text type1">👋 Hey, I'm Linus</text>
+  <text x="10" y="44" class="text type2" style="font-size:14px; fill:#8b949e;">FullStack dev from Sweden</text>
+</svg>

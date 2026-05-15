@@ -23,15 +23,101 @@
       border: 1px solid #d0d7de;
       border-radius: 6px;
       padding: 16px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .markdown-body {
       font-size: 14px;
     }
 
-    .markdown-body img.banner {
-      max-width: 100%;
+    /* Banner hover zoom */
+    .banner-link {
+      display: block;
+      overflow: hidden;
       border-radius: 4px;
+    }
+    .banner-link img {
+      max-width: 100%;
+      display: block;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .banner-link:hover img {
+      transform: scale(1.03);
+      filter: brightness(1.08);
+    }
+
+    /* Typing animation */
+    .typing-wrap {
+      text-align: center;
+      margin: 16px 0 8px;
+    }
+    .typing-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1f2328;
+      border-right: 2px solid #1f2328;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: typing 1.8s steps(18, end) 0.3s both, blink 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to   { width: 18ch; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Skill rows hover */
+    .markdown-body table tbody tr {
+      transition: background 0.15s;
+      cursor: default;
+    }
+    .markdown-body table tbody tr:hover {
+      background: #ddf4ff;
+    }
+
+    /* Details hover */
+    details {
+      transition: box-shadow 0.2s;
+      border-radius: 6px;
+    }
+    details:hover {
+      box-shadow: 0 0 0 2px #0969da44;
+    }
+
+    /* Email badge hover glow */
+    .email-link {
+      display: inline-block;
+      transition: transform 0.2s, filter 0.2s;
+    }
+    .email-link:hover {
+      transform: translateY(-2px);
+      filter: drop-shadow(0 4px 8px #0969da55);
+    }
+
+    /* Working on tag */
+    .flutter-tag {
+      display: inline-block;
+      background: #ddf4ff;
+      border: 1px solid #54aeff66;
+      color: #0969da;
+      border-radius: 20px;
+      padding: 2px 12px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.2s;
+      cursor: default;
+    }
+    .flutter-tag:hover {
+      background: #b6e3ff;
+      transform: translateY(-2px);
     }
   </style>
 </head>
@@ -40,11 +126,13 @@
     <div class="profile-box">
       <article class="markdown-body">
 
-        <a href="https://github.com/linusarneng">
-          <img class="banner" src="https://64.media.tumblr.com/54805606e41234da265775f4ee8631ef/41d4a35f37c5abf1-f6/s1280x1920/c86995ddee2840dabfff99995367a58ed1382687.gif" alt="Banner" />
+        <a class="banner-link" href="https://github.com/linusarneng">
+          <img src="https://64.media.tumblr.com/54805606e41234da265775f4ee8631ef/41d4a35f37c5abf1-f6/s1280x1920/c86995ddee2840dabfff99995367a58ed1382687.gif" alt="Banner" />
         </a>
 
-        <h1 align="center">Hey, I'm Linus 👋</h1>
+        <div class="typing-wrap">
+          <span class="typing-text">Hey, I'm Linus 👋</span>
+        </div>
 
         <p align="center">
           FullStack developer from Sweden — I like building things that actually work.
@@ -71,14 +159,12 @@
         <hr />
 
         <h3>🔨 What I'm working on</h3>
-        <ul>
-          <li>A Flutter app</li>
-        </ul>
+        <p><span class="flutter-tag">Flutter app</span></p>
 
         <hr />
 
         <h3>📬 Reach me</h3>
-        <a href="mailto:linus.arneng@scalebit.com">
+        <a class="email-link" href="mailto:linus.arneng@scalebit.com">
           <img src="https://img.shields.io/badge/Email-linus.arneng%40scalebit.com-blue?style=for-the-badge&logo=gmail" alt="Email" />
         </a>
 
