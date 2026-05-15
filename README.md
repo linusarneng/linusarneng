@@ -8,12 +8,18 @@
 
 ---
 
-### 🧠 What I'm good at
+<details>
+<summary><b>🧠 What I'm good at</b> (click to expand)</summary>
+<br>
 
-- **Frontend** — React, HTML/CSS, JavaScript
-- **Backend** — Python, Node.js
-- **Mobile** — Flutter, Android
-- **Other** — Git, Linux, C#, Unity
+| Area | Technologies |
+|------|-------------|
+| **Frontend** | React, HTML/CSS, JavaScript |
+| **Backend** | Python, Node.js |
+| **Mobile** | Flutter, Android |
+| **Other** | Git, Linux, C#, Unity |
+
+</details>
 
 ---
 
@@ -25,4 +31,6 @@
 
 ### 📬 Reach me
 
-**linus.arneng@scalebit.com**
+<a href="mailto:linus.arneng@scalebit.com">
+  <img src="https://img.shields.io/badge/Email-linus.arneng%40scalebit.com-blue?style=for-the-badge&logo=gmail" alt="Email">
+</a>
