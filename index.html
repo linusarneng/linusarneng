@@ -60,18 +60,27 @@
       font-size: 1.5rem;
       font-weight: 700;
       color: #1f2328;
-      border-right: 2px solid #1f2328;
       white-space: nowrap;
-      overflow: hidden;
       display: inline-block;
-      animation: typing 1.8s steps(18, end) 0.3s both, blink 0.75s step-end infinite;
+      position: relative;
+      animation: typing 1.8s steps(18, end) 0.3s both;
+    }
+    .typing-text::after {
+      content: '';
+      position: absolute;
+      right: -4px;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: #1f2328;
+      animation: blink 0.75s step-end infinite;
     }
     @keyframes typing {
-      from { width: 0; }
-      to   { width: 18ch; }
+      from { clip-path: inset(0 100% 0 0); }
+      to   { clip-path: inset(0 0% 0 0); }
     }
     @keyframes blink {
-      50% { border-color: transparent; }
+      50% { opacity: 0; }
     }
 
     /* Skill rows hover */
