@@ -22,20 +22,18 @@
       background: #ffffff;
       border: 1px solid #d0d7de;
       border-radius: 6px;
-      padding: 16px;
+      padding: 24px;
       animation: fadeIn 0.5s ease;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(12px); }
+      from { opacity: 0; transform: translateY(10px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    .markdown-body {
-      font-size: 14px;
-    }
+    .markdown-body { font-size: 14px; }
 
-    /* Banner hover zoom */
+    /* Banner */
     .banner-link {
       display: block;
       overflow: hidden;
@@ -48,14 +46,14 @@
     }
     .banner-link:hover img {
       transform: scale(1.03);
-      filter: brightness(1.08);
+      filter: brightness(1.06);
     }
 
-    /* Typing animation — centered via flex */
+    /* Heading */
     .typing-wrap {
       display: flex;
       justify-content: center;
-      margin: 16px 0 8px;
+      margin: 20px 0 6px;
     }
     .typing-text {
       font-size: 1.5rem;
@@ -63,7 +61,7 @@
       color: #1f2328;
       white-space: nowrap;
       position: relative;
-      animation: typing 1.8s steps(18, end) 0.3s both;
+      animation: typing 1.6s steps(16, end) 0.3s both;
     }
     .typing-text::after {
       content: '';
@@ -79,73 +77,114 @@
       from { clip-path: inset(0 100% 0 0); }
       to   { clip-path: inset(0 0% 0 0); }
     }
-    @keyframes blink {
-      50% { opacity: 0; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .subtitle {
+      text-align: center;
+      color: #656d76;
+      font-size: 0.9rem;
+      margin: 0 0 20px;
     }
 
-    /* Skills list */
-    .skills-section h3 {
-      margin-bottom: 12px;
+    /* Section headers */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #656d76;
+      margin: 0 0 12px;
     }
+
+    /* Skills */
     .skill-row {
       display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 7px 0;
-      border-bottom: 1px solid #f0f0f0;
-      font-size: 0.9rem;
-      color: #1f2328;
+      align-items: baseline;
+      gap: 12px;
+      padding: 6px 0;
+      border-bottom: 1px solid #f6f8fa;
+      font-size: 0.875rem;
     }
-    .skill-row:last-child {
-      border-bottom: none;
-    }
-    .skill-icon {
-      width: 22px;
-      height: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
+    .skill-row:last-child { border-bottom: none; }
     .skill-area {
       font-weight: 600;
+      color: #1f2328;
       min-width: 80px;
-      color: #656d76;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+      font-size: 0.875rem;
     }
     .skill-techs {
+      color: #656d76;
+    }
+
+    /* Tech badges */
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+    .badge {
+      background: #f6f8fa;
+      border: 1px solid #d0d7de;
+      border-radius: 4px;
+      padding: 3px 10px;
+      font-size: 0.78rem;
       color: #1f2328;
-    }
-
-    /* Email badge hover glow */
-    .email-link {
-      display: inline-block;
-      transition: transform 0.2s, filter 0.2s;
-    }
-    .email-link:hover {
-      transform: translateY(-2px);
-      filter: drop-shadow(0 4px 8px #0969da55);
-    }
-
-    /* Working on tag */
-    .flutter-tag {
-      display: inline-block;
-      background: #ddf4ff;
-      border: 1px solid #54aeff66;
-      color: #0969da;
-      border-radius: 20px;
-      padding: 2px 12px;
-      font-size: 0.82rem;
       font-weight: 500;
-      transition: background 0.2s, transform 0.2s;
+      transition: background 0.15s, border-color 0.15s, transform 0.15s;
       cursor: default;
     }
-    .flutter-tag:hover {
-      background: #b6e3ff;
+    .badge:hover {
+      background: #ddf4ff;
+      border-color: #54aeff;
+      color: #0969da;
+      transform: translateY(-1px);
+    }
+
+    /* Working on */
+    .wip-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f6f8fa;
+      border: 1px solid #d0d7de;
+      border-radius: 4px;
+      padding: 5px 12px;
+      font-size: 0.875rem;
+      color: #1f2328;
+      font-weight: 500;
+      transition: background 0.15s, border-color 0.15s, transform 0.15s;
+      cursor: default;
+    }
+    .wip-tag:hover {
+      background: #ddf4ff;
+      border-color: #54aeff;
+      color: #0969da;
       transform: translateY(-2px);
+    }
+    .wip-dot {
+      width: 6px;
+      height: 6px;
+      background: #1a7f37;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    /* Email */
+    .email-link {
+      color: #0969da;
+      font-size: 0.875rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .email-link:hover {
+      color: #0550ae;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -159,50 +198,49 @@
         </a>
 
         <div class="typing-wrap">
-          <span class="typing-text">Hey, I'm Linus 👋</span>
+          <span class="typing-text">Hey, I'm Linus</span>
+        </div>
+        <p class="subtitle">Fullstack developer from Sweden — I like building things that actually work.</p>
+
+        <p class="section-label">Skills</p>
+        <div class="skill-row">
+          <span class="skill-area">Frontend</span>
+          <span class="skill-techs">React, HTML/CSS, JavaScript</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-area">Backend</span>
+          <span class="skill-techs">Python, Node.js</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-area">Mobile</span>
+          <span class="skill-techs">Flutter, Android</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-area">Other</span>
+          <span class="skill-techs">Git, Linux, C#, Unity</span>
         </div>
 
-        <p align="center">
-          FullStack developer from Sweden — I like building things that actually work.
-        </p>
-
-        <hr />
-
-        <div class="skills-section">
-          <h3>🧠 What I'm good at</h3>
-          <div class="skill-row">
-            <span class="skill-icon">⚛️</span>
-            <span class="skill-area">Frontend</span>
-            <span class="skill-techs">React, HTML/CSS, JavaScript</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-icon">🐍</span>
-            <span class="skill-area">Backend</span>
-            <span class="skill-techs">Python, Node.js</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-icon">📱</span>
-            <span class="skill-area">Mobile</span>
-            <span class="skill-techs">Flutter, Android</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-icon">🛠️</span>
-            <span class="skill-area">Other</span>
-            <span class="skill-techs">Git, Linux, C#, Unity</span>
-          </div>
+        <div class="badge-row">
+          <span class="badge">React</span>
+          <span class="badge">JavaScript</span>
+          <span class="badge">Python</span>
+          <span class="badge">Node.js</span>
+          <span class="badge">Flutter</span>
+          <span class="badge">Android</span>
+          <span class="badge">C#</span>
+          <span class="badge">Unity</span>
+          <span class="badge">Linux</span>
+          <span class="badge">Git</span>
         </div>
 
-        <hr />
+        <p class="section-label" style="margin-top:20px;">Currently building</p>
+        <span class="wip-tag">
+          <span class="wip-dot"></span>
+          Flutter app
+        </span>
 
-        <h3>🔨 What I'm working on</h3>
-        <p><span class="flutter-tag">Flutter app</span></p>
-
-        <hr />
-
-        <h3>📬 Reach me</h3>
-        <a class="email-link" href="mailto:linus.arneng@scalebit.com">
-          <img src="https://img.shields.io/badge/Email-linus.arneng%40scalebit.com-blue?style=for-the-badge&logo=gmail" alt="Email" />
-        </a>
+        <p class="section-label" style="margin-top:20px;">Contact</p>
+        <a class="email-link" href="mailto:linus.arneng@scalebit.com">linus.arneng@scalebit.com</a>
 
       </article>
     </div>
